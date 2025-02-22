@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Improved background image styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: url('antony waste.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Made content wrapper less hazy with better contrast */
+        .content-wrapper {
+            position: relative;
+            min-height: 1000vh;
+            background-color: rgba(255, 255, 255, 0.85); /* Reduced opacity for clearer background */
+            backdrop-filter: blur(0px); /* Slight blur for better readability */
+        }
+
+        nav {
+            background-color: rgba(44, 88, 52, 1); /* Solid nav for better readability */
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3a7344;
+        }
+
+        .hero {
+            background-color: rgba(44, 88, 52, 0.95); /* More solid hero section */
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.97); /* More solid sections */
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .location-card {
+            background-color: rgba(232, 245, 233, 0.97); /* More solid cards */
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #2c5834;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background-color: white; /* Solid table background */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background-color: #2c5834; /* Solid header */
+            color: white;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: #f8f8f8; /* Solid alternating rows */
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white; /* Solid form inputs */
+        }
+
+        .btn {
+            background-color: #2c5834;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: #3a7344;
+        }
+
+        footer {
+            background-color: rgba(44, 88, 52, 1); /* Solid footer */
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<!-- Rest of the HTML remains the same -->
+<body>
+    <div class="content-wrapper">
+        <!-- Previous content remains exactly the same -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="home" class="hero">
+            <h1>Waste Management</h1>
+            <p>Professional waste collection services for a cleaner, greener community</p>
+        </section>
+
+        <div class="container">
+            <section id="locations" class="section">
+                <h2>Collection Locations</h2>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <h3>Residential Areas</h3>
+                        <ul>
+                            <li>Green Park Housing</li>
+                            <li>Riverside Apartments</li>
+                            <li>Sunset Valley Colony</li>
+                            <li>Highland Residences</li>
+                        </ul>
+                    </div>
+                    <div class="location-card">
+                        <h3>Commercial Areas</h3>
+                        <ul>
+                            <li>Downtown Market</li>
+                            <li>Shopping Complex</li>
+                            <li>Business District</li>
+                            <li>Restaurant Row</li>
+                        </ul>
+                    </div>
+                    <div class="location-card">
+                        <h3>Industrial Zones</h3>
+                        <ul>
+                            <li>Tech Park</li>
+                            <li>Manufacturing Hub</li>
+                            <li>Warehouse District</li>
+                            <li>Processing Zone</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="schedule" class="section">
+                <h2>Collection Schedule</h2>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Type of Waste</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6:00 AM - 8:00 AM</td>
+                            <td>Residential Areas</td>
+                            <td>Household Waste</td>
+                        </tr>
+                        <tr>
+                            <td>8:30 AM - 10:30 AM</td>
+                            <td>Commercial Areas</td>
+                            <td>Commercial Waste</td>
+                        </tr>
+                        <tr>
+                            <td>11:00 AM - 1:00 PM</td>
+                            <td>Industrial Zones</td>
+                            <td>Industrial Waste</td>
+                        </tr>
+                        <tr>
+                            <td>2:00 PM - 4:00 PM</td>
+                            <td>Special Locations</td>
+                            <td>Recyclables</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Contact Us</h2>
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Phone">
+                    <textarea placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </section>
+        </div>
+
+        <footer>
+            <p>Emergency Contact: (555) 0123-4567</p>
+            <p>Email: support@ecocollect.com</p>
+            <p>&copy; 2025 EcoCollect Waste Management. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
