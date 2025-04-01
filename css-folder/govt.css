@@ -6,6 +6,14 @@
     --accent-green: #3CB371;
 }
 
+.h1line{
+    font-size: 25px;
+    font-weight: bold;
+    width: 49%;
+    padding: 24px;
+text-align: center;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -15,11 +23,12 @@ body {
 }
 
 header {
-    background-color: var(--primary-green);
+    background-color: #2E8B57;
     color: white;
     padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: auto;
 }
 
 .container {
@@ -171,26 +180,8 @@ tr.selected {
 }
 
 
-.header-buttons {
-display: flex;
-gap: 10px; 
-justify-content: flex-end; 
-}
 
-.header-btn {
-background-color: var(--accent-green);
-color: white;
-border: none;
-padding: 10px 15px;
-font-size: 14px;
-border-radius: 4px;
-cursor: pointer;
-transition: background-color 0.3s;
-}
 
-.header-btn:hover {
-background-color: var(--dark-green);
-}
 
 .header {
 display: flex;
@@ -198,13 +189,3 @@ align-items: flex-start; /* Align items to the top */
 justify-content: space-between; /* Space between logos and buttons */
 }
 
-.logo-container {
-display: flex;
-align-items: flex-start; /* Align logos to the top */
-gap: 5px; /* Space between logos */
-}
-
-.header-logo {
-width: 30px; /* Set a fixed width for logos */
-height: auto; /* Maintain aspect ratio */
-}
