@@ -1,0 +1,225 @@
+.header{
+    background-image:linear-gradient(rgba(4,9,30,0.5),
+    rgba(4,9,30,0.7)),url(/images/about.jpg);
+    height: auto; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+    body {
+      color: white;
+      line-height: 1.6;
+    }
+  
+    
+  
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+    
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .search-box {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+    
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .btn {
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    
+    .btn-outline {
+      border: 1px solid #333;
+      background: transparent;
+    }
+    
+    .btn-filled {
+      background-color: #333;
+      color: white;
+      border: none;
+    }
+    
+    .sub-nav {
+      padding: 10px 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .sub-nav a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+    
+    .hero-section {
+  
+      background-color: transparent;
+    
+      padding: 50px 20px;
+      text-align: center;
+    }
+    
+    .hero-title {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+    
+    .features {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .feature {
+      width: 30%;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      font-size: 35px;
+  
+      margin-bottom: 15px;
+    }
+    
+    .feature-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .feature-text {
+      font-size: 14px;
+    }
+    
+    .image-section {
+      height: 290px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .banner-image {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+    
+    .photo-credit {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: white;
+      font-size: 12px;
+      background-color: rgba(0,0,0,0.5);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .benefits-section {
+      background-color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    
+    .benefits-title {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 40px;
+    }
+    
+    .benefits {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .benefit {
+      width: 30%;
+      text-align: center;
+    }
+    
+    .benefit-icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    
+    .benefit-title {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .services{
+      width:80%;
+      margin: auto;
+      text-align:center;
+      padding-top: 100px;
+      
+  }
+  h1{
+      font-size: 36px;
+      font-weight:600px;
+  }
+  .row{
+      margin:5%;
+      display:flex;
+      justify-content: space-between;
+      width:80%;
+      margin: auto;
+      text-align:center;
+  }
+  h1 {
+      font-size: 36px;
+      font-weight:600px;
+  }
+  .row{
+      margin:5%;
+      display:flex;
+      justify-content: space-between;
+  
+  }
+  .service-col{
+      flex-basis:31%;
+      background:#fff3f3;
+      border-radius:10px;
+      margin-bottom:5%;
+      padding:20px 12px;
+      box-sizing:border-box;
+  }
+  .benefit-text{
+      color:#777;
+      font-size:300;
+      line-height:22px;
+      padding:10px;
+  }
+  .service-col:hover{
+      box-shadow:0 0 20px 0px rgba(0,0,0,0.2);
+      transition: 0.5s;
+  }

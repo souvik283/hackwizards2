@@ -1,40 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us Page</title>
-    <link rel="stylesheet" href="/css-folder/nav.css">
-    <link rel="stylesheet" href="/css-folder/about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500px - Photography Community</title>
+  <link rel="stylesheet" href="/css-folder/nav.css">
+  <link rel="stylesheet" href="/css-folder/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav> 
-        <a href="/index.html">Clean India Grow India</a>
-        <img src="/images/indialogo.png" alt="logo">
+    <section class="header">
+        <nav> 
+            <a href="/index.html">Smart India Clean India</a>
+            <img src="/images/indialogo.png" alt="logo">
+        <div class="nav-link" id="nav-link">
+            <i class="fa-solid fa-xmark fa-lg" id="nav-cross"></i>
+            <ul>
+                <li>
+                    <a href="/index.html">HOME</a>
+                </li>
+                <li>
+                    <a href="/html-folder/about.html">ABOUT</a>
+                </li>
+                <li>
+                    <a href="/html-folder/login.html">LOGIN</a>
+                </li>
+                <li>
+                    <a href="/html-folder/profile.html">PROFILE</a>
+                </li>
+                <li>
+                    <a href="/html-folder/contact.html">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+        <i class="fa-solid fa-bars fa-lg" id="nav-menu"></i>
+    </nav>
+   
 
-    <div class="nav-link">
-        <ul>
-            <li>
-                <a href="/index.html">HOME</a>
-            </li>
-            <li>
-                <a href="/html-folder/about.html">ABOUT</a>
-            </li>
-            <li>
-                <a href="/html-folder/login.html">LOGIN</a>
-            </li>
-            <li>
-                <a href="/html-folder/profile.html">PROFILE</a>
-            </li>
-            <li>
-                <a href="/html-folder/contact.html">CONTACT</a>
-            </li>
-        </ul>
+  <section class="hero-section">
+    <h1 class="hero-title">WasteConnect</h1>
+    <div class="features">
+      <div class="feature">
+       
+        <h2 class="feature-title">Content</h2>
+        <p class="feature-text">We believe that great content should speak for itself and we take pride in helping all photographers showcase their work and get exposure. Content is king in everything we do.</p>
+      </div>
+      
+      <div class="feature">
+       
+        <h2 class="feature-title">Growth</h2>
+        <p class="feature-text">The creative journey doesn't have an end; there's always room for improvement. We're committed to helping you grow as a photographer through constant learning, and step outside of your comfort zone.</p>
+      </div>
+      
+      <div class="feature">
+    
+        <h2 class="feature-title">Recognition</h2>
+        <p class="feature-text">You work hard as a photographer and we know the importance of being recognized for your work and achievements. Our goal is to make sure talented photographers get the recognition they deserve.</p>
+      </div>
     </div>
-</nav>
+  </section>
 
-<section class="footer">
+  <section class="image-section">
+    
+  </section>
+</section>
+  <section class="services">
+    <h2 class="benefits-title">What makes us different</h2>
+    <div class="row">
+      <div class="service-col">
+       
+        <h3 class="benefit-title">Grow as a photographer</h3>
+        <p class="benefit-text">Get immediate exposure with your first upload. Our Pulse algorithm surfaces new photographers and photographers, ensuring your photos are seen by the community so you receive valuable feedback on your work.</p>
+      </div>
+      
+      <div class="service-col">
+        
+        <h3 class="benefit-title">Build your career</h3>
+        <p class="benefit-text">Present yourself as a professional. Get hired by displaying your Services, create a Directory listing, showcase the Workshops you're holding, and create galleries to highlight your work.</p>
+      </div>
+      
+      <div class="service-col">
+      
+        <h3 class="benefit-title">See your performance</h3>
+        <p class="benefit-text">With Statistics and Pulse you get valuable insights into how your photos are performing and how you rank in comparison to other photographers in the community.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
     <div class="footer-container">
         <p>&copy; 2025 Smart India Clean India. All rights reserved.</p>
         <div class="social-icon">
@@ -45,6 +98,7 @@
     </div>
     </div>
 </section>
-    
+
+  <script src="/js-folder/nav.js"></script>
 </body>
 </html>
