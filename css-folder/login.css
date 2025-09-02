@@ -75,7 +75,18 @@ body {
 #signup .login a {
     text-decoration: none;
 }
-
+#signup .login button{
+        padding: 7px 40px;
+    width: 350px;
+    border-radius: 3px;
+    font-size: 19px;
+    font-weight: 500;
+    color: rgb(50, 50, 50);
+    background-color: rgb(132, 252, 196);
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
 #login_btn {
     padding: 7px 40px;
     width: 350px;
