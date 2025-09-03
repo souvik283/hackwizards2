@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <link rel="stylesheet" href="/css-folder/nav.css">
     <link rel="stylesheet" href="/css-folder/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -32,22 +33,23 @@
                 <a id="login_btn">Login</a>
                 <p>Or login using different platfrom</p>
              <i class="fa-brands fa-google"></i>
+             <h4></h4>
             </form>
         </div>
          <div id="reg_form" class="reg_login toggle login">
             <form action="">
                 <h2>Register</h2>
-                <span><input type="text" placeholder="Username"><i class="fa-solid fa-user"></i></span>
-                <span><input type="email" placeholder="Email"><i class="fa-solid fa-lock"></i></span>
-                <span><input type="password" placeholder="Password"><i class="fa-solid fa-lock"></i></span>
-                <a href="">Forgot password?</a>
-                <button>Register</button>
+                <span><input class="input2" type="text" placeholder="Username"><i class="fa-solid fa-user"></i></span>
+                <span><input class="input2" type="email" placeholder="Email"><i class="fa-solid fa-envelope"></i></span>
+                <span><input class="input2" type="password" placeholder="Password"><i class="fa-solid fa-lock"></i></span>
+                <a id="register_button">Register</a>
                 <p>Or login using different platfrom</p>
              <i class="fa-brands fa-google"></i>
             </form>
         </div>
     </section>
 
+    <script src="/js-folder/fetch.js"></script>
     <script src="https://kit.fontawesome.com/58cd1ba0fe.js" crossorigin="anonymous"></script>
     <script src="/js-folder/login.js"></script>
 </body>
