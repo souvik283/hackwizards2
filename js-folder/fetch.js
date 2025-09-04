@@ -1,6 +1,6 @@
 // 🔹 Replace with YOUR values from Supabase Project Settings → API
-const SUPABASE_URL = "https://jywzohoowfgtyknlkekd.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5d3pvaG9vd2ZndHlrbmxrZWtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4MzA1MTYsImV4cCI6MjA3MjQwNjUxNn0.luyyq0jQFj2bD3m3LxtTpd6PFwl0mQq5pYMAotjAsD8";
+const SUPABASE_URL = "https://yzqdwwwefnuqrwvarjua.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6cWR3d3dlZm51cXJ3dmFyanVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5ODczMDQsImV4cCI6MjA3MjU2MzMwNH0.wdNJ3Xmaqv1gCI1bE2F0GGUrA0COjlmLDKe3HW4LHk8";
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
@@ -10,44 +10,48 @@ const supabaseClient = window.supabase.createClient(
 // Upload handler
 document.getElementById("register_button").addEventListener("click", async (e) => {
   e.preventDefault();
+
+
   let x = document.getElementsByClassName("input2")
 
   const name = x[0].value;
   const email = x[1].value;
-  const password = x[2].value
-
+  const password = x[2].value;
+console.log(name, email, password)
 
   // Save into table "test"
   const { error: insertError } = await supabaseClient
-    .from("test")
-    .insert([{ name: name, eamil: email, password: password }]);
+    .from("Agency")
+    .insert([{ UserName: name, Email: email, PassWord: password }]);
 
   if (insertError) {
-    alert("❌ Failed to save record!");
+    alert(" Failed to save record!");
     console.error(insertError);
   } else {
-    alert("✅ Success! Saved to Supabase.");
+    alert(" Success! Saved to Supabase.");
   }
 });
 
 // Fetch names
-document.getElementById("fetchNames").addEventListener("click", async () => {
+document.getElementById("login_btn").addEventListener("click", async () => {
   const { data, error } = await supabaseClient
-    .from("test")
-    .select("name");
+    .from("Agency")
+    .select("Email")
+    .select("PassWord")
 
   if (error) {
-    alert("❌ Failed to fetch names!");
+    alert(" Failed to fetch names!");
     console.error(error);
     return;
   }
 
-  const nameList = document.getElementById("nameList");
-  nameList.innerHTML = "";
+  const y = document.getElementsByClassName("input1")
+let fetch_name = y[0]
+let fetch_password = y[1]
+
 
   data.forEach((row) => {
-    const li = document.createElement("li");
-    li.textContent = row.name.toUpperCase(); // CAPITALIZED
-    nameList.appendChild(li);
+    fetch_name.value = row.UserName;
+    console.log(row.Email, row.UserName, row.PassWord) // CAPITALIZED
   });
 });
