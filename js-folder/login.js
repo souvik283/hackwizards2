@@ -14,23 +14,17 @@ reg1_btn.addEventListener("click", () => {
     form1.classList.toggle("toggle")
     form2.classList.toggle("toggle")
     reg_text.classList.toggle("shift1")
+    log_text.classList.toggle("shift3")
+    setTimeout(()=>{
     log_text.classList.toggle("shift2")
+    }, 1)
 })
 reg2_btn.addEventListener("click", () => {
     form1.classList.toggle("toggle")
     form2.classList.toggle("toggle")
     reg_text.classList.toggle("shift1")
     log_text.classList.toggle("shift2")
-})
-
-
-
-log_btn.addEventListener("click", () => {
-    if (input[0].value == "souvik" && input[1].value == "111") {
-        window.location = "/html-folder/govt.html"
-    } else if (input[0].value != "souvik") {
-        error_txt.innerHTML = `**Enter a valid username`
-    } else {
-        error_txt.innerHTML = `**Enter a valid passsword`
-    }
+    setTimeout(()=>{
+    log_text.classList.toggle("shift3")
+    }, 600)
 })

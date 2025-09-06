@@ -17,7 +17,7 @@ document.getElementById("register_button").addEventListener("click", async (e) =
   const name = x[0].value;
   const email = x[1].value;
   const password = x[2].value;
-console.log(name, email, password)
+  console.log(name, email, password)
 
   // Save into table "test"
   const { error: insertError } = await supabaseClient
@@ -36,8 +36,7 @@ console.log(name, email, password)
 document.getElementById("login_btn").addEventListener("click", async () => {
   const { data, error } = await supabaseClient
     .from("Agency")
-    .select("Email")
-    .select("PassWord")
+    .select("*")
 
   if (error) {
     alert(" Failed to fetch names!");
@@ -46,12 +45,18 @@ document.getElementById("login_btn").addEventListener("click", async () => {
   }
 
   const y = document.getElementsByClassName("input1")
-let fetch_name = y[0]
-let fetch_password = y[1]
+  let fetch_name = y[0]
+  let fetch_password = y[1]
 
 
   data.forEach((row) => {
-    fetch_name.value = row.UserName;
-    console.log(row.Email, row.UserName, row.PassWord) // CAPITALIZED
+    if (fetch_name.value == row.UserName && fetch_password.value == row.PassWord) {
+      window.location = "/html-folder/govt.html"
+    } else if (fetch_name.value != row.UserName) {
+      error_txt.innerHTML = `**Enter a valid username`
+    } else {
+      error_txt.innerHTML = `**Enter a valid passsword`
+    }
+    // console.log(row.Email, row.UserName, row.PassWord) 
   });
 });
