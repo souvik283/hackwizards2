@@ -1,49 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile page</title>
-    <link rel="stylesheet" href="/css-folder/nav.css">
-    <link rel="stylesheet" href="/css-folder/profile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <nav> 
-        <a href="/govt.html">Clean India Grow India</a>
-        <img src="/images/indialogo.png" alt="logo">
-       
-    <div class="nav-link">
-        <ul>
-            <li>
-                <a href="/govt.html">HOME</a>
-            </li>
-            <li>
-                <a href="/html-folder/about.html">ABOUT</a>
-            </li>
-            <li>
-                <a href="/html-folder/login.html">LOGIN</a>
-            </li>
-            <li>
-                <a href="/html-folder/profile.html">PROFILE</a>
-            </li>
-            <li>
-                <a href="/html-folder/contact.html">CONTACT</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-    
-<section class="footer">
-    <div class="footer-container">
-        <p>&copy; 2025 Smart India Clean India. All rights reserved.</p>
-        <div class="social-icon">
-        <div> <a href="www.facebook.com" target="_blank"> <i class="fa-brands fa-facebook fa-xl"></i></a></div>
-        <div> <a href="www.instsgram.com" target="_blank"> <i class="fa-brands fa-instagram fa-xl"></i></a></div>
-        <div> <a href="www.twitter.com" target="_blank"> <i class="fa-brands fa-x-twitter fa-xl"></i></a></div>
-        <div> <a href="www.linkedin.com" target="_blank"> <i class="fa-brands fa-linkedin fa-xl"></i></a></div>
-    </div>
-    </div>
-</section>
-</body>
-</html>
+    // Add click event to table rows
+    document.querySelectorAll('table tbody tr').forEach(row => {
+        row.addEventListener('click', () => {
+            const reportId = parseInt(row.getAttribute('data-id'));
+            selectReport(reportId);
+        });
+    });
+}
+
+// Initialize the map (using OpenStreetMap with Leaflet)
+function initMap() {
+    // Create the map centered on a default location
+    map = L.map('map').setView([39.8283, -98.5795], 4); // Center of US
+
+    // Add the OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+    }).addTo(map);
+
+    // Add markers for all reports
+    wasteReports.forEach(report => {
+        addMarkerToMap(report);
+    });
+}
+
+// Add a marker to the map
+function addMarkerToMap(report) {
+    const marker = L.marker([report.coordinates.lat, report.coordinates.lng])
+        .addTo(map)
+        .bindPopup(`<b>${report.location}</b><br>${report.username}`);
+
+    // Store the marker with its report ID
+    markers[report.id] = marker;
+
+    // Add click event to marker
+    marker.on('click', () => {
+        selectReport(report.id);
+    });
+}
+
+// Setup event listeners
+function setupEventListeners() {
+    dispatchButton.addEventListener('click', () => {
+        if (selectedReportId) {
+            alert('Message dispatched! Cleanup team is on the way.');
+        }
+    });
+}
+
+// Select a report and update the UI
+function selectReport(reportId) {
+    selectedReportId = reportId;
+
+    // Update table selection
+    document.querySelectorAll('table tbody tr').forEach(row => {
+        if (parseInt(row.getAttribute('data-id')) === reportId) {
+            row.classList.add('selected');
+        } else {
+            row.classList.remove('selected');
+        }
+    });
+
+    // Find the selected report
+    const report = wasteReports.find(r => r.id === reportId);
+
+    if (report) {
+        // Update image and description
+        imageContainer.innerHTML = `<img src="${report.imageUrl}" alt="Waste report image">`;
+        descriptionContainer.innerHTML = `<p>${report.description}</p>`;
+
+        // Enable dispatch button
+        dispatchButton.disabled = false;
+
+        // Highlight the marker on the map
+        if (markers[reportId]) {
+            // Close any open popups
+            map.closePopup();
+
+            // Open the popup for this marker
+            markers[reportId].openPopup();
+
+            // Center the map on this marker with animation
+            map.flyTo([report.coordinates.lat, report.coordinates.lng], 13, {
+                animate: true,
+                duration: 1
+            });
+        }
+    }
+}
